@@ -1,0 +1,85 @@
+<!doctype html>
+<div class="server-preview" id="serverPreview">
+<div id="serverPreviewTag" class="server-preview-tag">#DS</div>
+<div id="serverPreviewName" class="server-preview-name">Mon Serveur</div>
+</div>
+</div>
+</div>
+
+
+<section class="chat-area">
+<div id="messageStream" class="messages"></div>
+<div class="composer">
+<input id="messageInput" placeholder="Écris un message...">
+<button id="sendMsg">Envoyer</button>
+</div>
+</section>
+</main>
+
+
+<aside class="right-sidebar">
+<h4>Infos salon</h4>
+<div id="channelInfo" class="panel">
+<div><strong>Type:</strong> <span id="channelType">text</span></div>
+<div><strong>Nom:</strong> <span id="channelInfoName">général</span></div>
+</div>
+
+
+<h4>Ajouter / éditer</h4>
+<div class="panel">
+<label>Avatar (membre): <input id="avatarInput" type="file" accept="image/*"></label>
+<label>Nom: <input id="newMemberName" placeholder="Pseudo"></label>
+<label>Rôle: <select id="newMemberRole"></select></label>
+<button id="createMemberBtn">Créer membre</button>
+</div>
+
+
+<h4>Preview membre sélectionné</h4>
+<div id="memberPreview" class="panel member-preview">
+<img id="previewAvatar" src="" alt="avatar"/>
+<div><strong id="previewName">—</strong></div>
+<div id="previewRoles">Rôles: —</div>
+</div>
+</aside>
+</div>
+
+
+<!-- Templates (hidden) -->
+<template id="roleItemTpl">
+<li class="role-item">
+<span class="role-color"></span>
+<input class="role-name" />
+<input class="role-color-input" type="color" />
+<label><input class="role-hoist" type="checkbox"> Affiché</label>
+<button class="del-role">Suppr</button>
+</li>
+</template>
+
+
+<template id="channelItemTpl">
+<li class="channel-item" data-type="text">
+<span class="channel-type">#</span>
+<input class="channel-name" />
+<select class="channel-type-select">
+<option value="text">Text</option>
+<option value="voice">Voice</option>
+</select>
+<button class="del-channel">Suppr</button>
+</li>
+</template>
+
+
+<template id="memberItemTpl">
+<li class="member-item">
+<img class="member-avatar" src=""/>
+<span class="member-name"></span>
+<select class="member-role-select"></select>
+<button class="toggle-voice">Toggle voc</button>
+<button class="del-member">Suppr</button>
+</li>
+</template>
+
+
+<script src="app.js" defer></script>
+</body>
+</html>
